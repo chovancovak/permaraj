@@ -1,0 +1,124 @@
+
+// --- HERO PODSTRÁNKY ---
+// Odpovídá HTML: <section class="section-hero section-hero--perma">
+.section-hero--perma {
+    background-color: lighten($color-perma-moss, 35%); // Jemný zelenkavý nádech pro odlišení
+    padding: 6rem $pad-mobile;
+    text-align: center;
+
+    @media (min-width: $tablet) {
+        padding: 8rem $pad-tablet;
+    }
+
+    .section-hero__title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        color: $color-perma-moss; // Mechová pro nadpis
+        margin-bottom: 0.5rem;
+    }
+
+    .section-hero__subtitle {
+        font-family: $font-primary;
+        font-style: italic;
+        color: $color-perma-earth;
+        opacity: 0.8;
+    }
+}
+
+// --- HLAVNÍ OBSAH STRÁNKY ---
+// Odpovídá HTML: <article class="perma-content">
+.perma-content {
+    @include section-spacing; // Použije tvoje odsazení
+    background-color: $color-perma-bg;
+
+    // Odpovídá HTML: <div class="perma-content__container">
+    &__container {
+        @include container-limit;
+        max-width: 800px; // Užší sloupec pro soustředěné čtení a ticho
+    }
+}
+
+// --- JEDNOTLIVÉ SEKCE ---
+// Odpovídá HTML: <section class="perma-section">
+.perma-section {
+    margin-bottom: 5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // Odpovídá HTML: <h2 class="perma-section__heading">
+    &__heading {
+        font-size: 2.2rem;
+        color: $color-perma-moss;
+        margin-bottom: 1.5rem;
+        position: relative;
+        
+        // Jiskra: cihlová linka pod nadpisem
+        &::after {
+            content: '';
+            display: block;
+            width: 45px;
+            height: 2px;
+            background-color: $color-perma-clay;
+            margin-top: 0.8rem;
+        }
+    }
+
+    // Odpovídá HTML: <p class="perma-section__text">
+    &__text {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: $color-perma-earth;
+        margin-bottom: 1.5rem;
+
+        // Modifikátor lead: <p class="perma-section__text perma-section__text--lead">
+        &--lead {
+            font-size: 1.4rem;
+            font-family: $font-primary;
+            font-style: italic;
+            border-left: 4px solid $color-willow-yellow; // Tvoje vrbová žlutá
+            padding-left: 1.5rem;
+            margin-bottom: 3rem;
+            color: $color-perma-earth;
+        }
+    }
+
+    // Modifikátor pro zvýrazněnou sekci (Ulehčujeme si práci)
+    // Odpovídá HTML: <section class="perma-section perma-section--highlight">
+    &--highlight {
+        background-color: rgba($color-white, 0.4);
+        padding: 2rem;
+        border-radius: $radius-md;
+    }
+}
+
+// --- KOMUNITNÍ BOX ---
+// Odpovídá HTML: <div class="community-box">
+.community-box {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background-color: rgba($color-white, 0.6);
+    border: 1px solid $color-willow-yellow;
+    border-radius: $radius-md;
+    box-shadow: $shadow-soft;
+
+    // Odpovídá HTML: <p class="community-box__text">
+    &__text {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    // Odpovídá HTML: <a href="..." class="community-box__link">
+    &__link {
+        color: $color-perma-earth;
+        text-decoration: none;
+        font-weight: 700;
+        // Jiskra: vrbové podtržení odkazu
+        box-shadow: inset 0 -8px 0 $color-willow-yellow;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: inset 0 -15px 0 $color-willow-yellow;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="post">
+    {# Hero sekce článku s úvodní fotkou #}
+    <header class="post__hero">
+        <div class="post__hero-container">
+            <div class="post__meta">
+                <time class="post__date">{{ datum }}</time>
+                <div class="post__tags">
+                    {% for tag in tags %}
+                        {% if tag != "clanky" %}
+                            <span class="post__tag">#{{ tag }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <h1 class="post__title">{{ title }}</h1>
+            <p class="post__perex">{{ perex }}</p>
+        </div>
+        
+        {% if picture %}
+        <div class="post__main-img-wrapper">
+            <img src="{{ picture }}" alt="{{ picture_title }}" class="post__main-img">
+            {% if picture_title %}
+                <span class="post__img-caption">{{ picture_title }}</span>
+            {% endif %}
+        </div>
+        {% endif %}
+    </header>
+
+    {# Samotný text článku #}
+    <div class="post__content">
+        <div class="post__body">
+            {{ content | safe }}
+        </div>
+    </div>
+
+    {# Patička pod článkem - návrat zpět #}
+    <footer class="post__footer">
+        <div class="post__footer-container">
+            <a href="/zapisky/" class="post__back-link">← Zpět na všechny zápisky</a>
+        </div>
+    </footer>
+</article>

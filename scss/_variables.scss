@@ -1,0 +1,52 @@
+// --- TYPOGRAFIE (Most se Síla ne) ---
+$font-primary: "Libre Baskerville", serif;
+$font-secondary: "Source Sans 3", sans-serif;
+
+// --- BAREVNÁ PALETA (Zemitý Perma ráj) ---
+$color-perma-green: #556B2F;  // Tmavší olivová (původní $secondary-c)
+$color-perma-moss:  #849060;  // Mechová zelená ($senary-c)
+$color-perma-earth: #7A6247;  // Hnědá pro text a klidné prvky ($color-primary)
+$color-perma-clay:  #B85C38;  // Cihlová pro akcenty a odkazy ($quaternary-c)
+$color-perma-bg:    #F4EFE6;  // Teplý krémový podklad ($background-c)
+$color-white:       #FFFFFF;  // Pro boxy a čisté plochy
+$color-willow-yellow: #E0E5A1; // Jemná žlutá z vrbových kočiček
+
+// Pomocné barvy pro detaily
+$color-border-soft: #D9CDBE; // Jemná barva pro linky a rámečky (ze Síla ne)
+$color-white:       #FFFFFF; // Čistá bílá pro boxy a kontrasty
+
+// Stíny (pro tu "jiskru" a hloubku)
+$shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.05);
+
+// Zaoblení (aby web nepůsobil ostře, ale organicky)
+$radius-md: 0.75rem;
+$radius-lg: 1.25rem;
+$radius-sm: 0.375rem;
+
+// --- RESPONZIVITA A ROZMĚRY (Tvé osvědčené standardy) ---
+$tablet: 768px;
+$pc: 1250px;
+
+// Odsazení (paddingy)
+$pad-mobile: 20px;
+$pad-tablet: 80px;
+$pad-pc: 180px;
+
+// --- MIXINY (Opakovatelné kousky kódu pro ticho v designu) ---
+@mixin section-spacing {
+  padding: 4rem $pad-mobile;
+  
+  @media (min-width: $tablet) {
+    padding: 6rem $pad-tablet;
+  }
+  
+  @media (min-width: $pc) {
+    padding: 8rem $pad-pc;
+  }
+}
+
+@mixin container-limit {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}

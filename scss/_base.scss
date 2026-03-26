@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background-color: $color-perma-bg;
+    color: $color-perma-earth;
+    font-family: $font-secondary;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: $font-primary;
+    font-weight: 400; // Libre Baskerville vypadá skvěle v tenčí variantě
+}
+
+
+// --- UNIVERZÁLNÍ HERO (pro podstránky jako Zápisky, Solární kuchyně atd.) ---
+.section-hero {
+    @include section-spacing; // Použije tvé paddingy (4rem / 6rem / 8rem)
+    background-color: $color-perma-bg;
+    text-align: center;
+
+    &__container {
+        @include container-limit;
+        // Hero texty vypadají lépe, když jsou trošku užší než zbytek webu
+        max-width: 900px; 
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: clamp(2.5rem, 7vw, 4rem); // Responzivní velikost
+        color: $color-perma-earth;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    &__subtitle {
+        font-family: $font-secondary;
+        font-size: 1.1rem;
+        color: $color-perma-moss;
+        font-style: italic;
+        letter-spacing: 0.05em;
+        opacity: 0.8;
+    }
+}
