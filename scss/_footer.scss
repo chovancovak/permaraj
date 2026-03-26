@@ -1,9 +1,38 @@
 // Footer
-.footer {
-    padding: 4rem $pad-mobile;
-    text-align: center;
-    border-top: 1px solid $color-border-soft;
-    font-size: 0.9rem;
-    color: rgba($color-perma-earth, 0.6);
-}
 
+
+.footer {
+    @include section-spacing; // Použije tvé standardní horní/dolní odsazení
+    background-color: $color-perma-bg; // Teplý krémový podklad
+    border-top: 1px solid $color-border-soft; // Jemná dělící linka
+    text-align: center;
+    color: $color-perma-earth;
+
+    &__container {
+        @include container-limit;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; // Mezera mezi řádky textu
+    }
+
+    &__link {
+        color: $color-perma-clay; // Tvá cihlová barva pro akcent
+        text-decoration: none; // Žádné podtržení v základu (minimalismus)
+        font-weight: 600;
+        transition: color 0.3s ease;
+        position: relative;
+
+        // Decentní interakce při najetí
+        &:hover {
+            color: $color-perma-green; // Změna na olivovou při najetí
+            text-decoration: underline; // Podtržení se objeví až při zájmu (hoveru)
+        }
+    }
+
+    &__info {
+        font-family: $font-secondary;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        letter-spacing: 0.05em;
+    }
+}
