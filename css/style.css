@@ -50,6 +50,27 @@ h1, h2, h3 {
   letter-spacing: 0.05em;
   opacity: 0.8;
 }
+.section-hero .blog-intro-bio {
+  max-width: 650px;
+  margin: 2rem auto 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #849060;
+  font-style: italic;
+  opacity: 0.85;
+  position: relative;
+  padding: 0 1rem;
+}
+.section-hero .blog-intro-bio::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: #B85C38;
+  margin: 0 auto 1.5rem;
+  opacity: 0.5;
+}
 
 .header {
   padding: 2rem 20px;
@@ -271,6 +292,82 @@ h1, h2, h3 {
   height: auto;
   border-radius: 1.25rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pathways {
+  padding: 4rem 20px;
+}
+@media (min-width: 768px) {
+  .pathways {
+    padding: 6rem 80px;
+  }
+}
+@media (min-width: 1250px) {
+  .pathways {
+    padding: 8rem 180px;
+  }
+}
+.pathways__container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+@media (max-width: 768px) {
+  .pathways__container {
+    margin-bottom: 3rem;
+  }
+}
+
+.pathway-card {
+  padding: 2.5rem;
+  border: 1px solid #D9CDBE;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pathway-card--highlight {
+  background-color: rgba(184, 92, 56, 0.03);
+  border-color: rgba(184, 92, 56, 0.2);
+}
+.pathway-card__title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.8rem;
+  color: #7A6247;
+  margin-bottom: 1rem;
+}
+.pathway-card__text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #7A6247;
+}
+.pathway-card__text strong {
+  color: #B85C38;
+}
+.pathway-card__link {
+  font-weight: 700;
+  text-decoration: none;
+  color: #B85C38;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+.pathway-card__link:hover {
+  text-decoration: underline;
+}
+.pathway-card__inline-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+.pathway-card__inline-link:hover {
+  color: #B85C38;
 }
 
 .section-hero--perma {
@@ -556,6 +653,9 @@ h1, h2, h3 {
 }
 .post__main-img {
   width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
   max-height: 70vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -615,6 +715,31 @@ h1, h2, h3 {
   color: #849060;
   opacity: 0.8;
 }
+.post__body .article-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0;
+}
+.post__body .article-image-grid .article-image {
+  flex: 1;
+  min-width: 150px;
+  margin: 0;
+  text-align: center;
+}
+.post__body .article-image-grid .article-image img {
+  width: auto;
+  max-height: 180px;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 1rem;
+}
+.post__body .article-image-grid .article-image span {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 0;
+}
 .post__body h3 {
   font-size: 1.8rem;
   font-family: "Libre Baskerville", serif;
@@ -624,18 +749,61 @@ h1, h2, h3 {
 .post__body strong {
   color: #B85C38;
 }
-.post__footer {
-  padding: 4rem 0;
+.post .post__footer {
+  padding: 4rem 20px;
+}
+@media (min-width: 768px) {
+  .post .post__footer {
+    padding: 6rem 80px;
+  }
+}
+@media (min-width: 1250px) {
+  .post .post__footer {
+    padding: 8rem 180px;
+  }
+}
+.post .post__footer {
   border-top: 1px solid #D9CDBE;
+  margin-top: 4rem;
+}
+.post .post__footer-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 750px;
   text-align: center;
 }
-.post__back-link {
-  color: #B85C38;
-  text-decoration: none;
-  font-weight: 700;
+.post .post__cta {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #849060;
+  font-style: italic;
+  margin-bottom: 3rem;
 }
-.post__back-link:hover {
+.post .post__cta-link {
+  color: #B85C38;
+  font-weight: 700;
   text-decoration: underline;
+}
+.post .post__cta-link:hover {
+  color: #556B2F;
+}
+.post .post__back-wrapper {
+  padding-top: 2rem;
+}
+.post .post__back-link {
+  font-family: "Source Sans 3", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: #7A6247;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.post .post__back-link:hover {
+  opacity: 1;
 }
 
 .footer {

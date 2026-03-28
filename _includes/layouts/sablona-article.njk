@@ -37,10 +37,24 @@ layout: layouts/base.njk
         </div>
     </div>
 
-    {# Patička pod článkem - návrat zpět #}
+    {# Jeden společný závěr článku #}
     <footer class="post__footer">
         <div class="post__footer-container">
-            <a href="/zapisky/" class="post__back-link">← Zpět na všechny zápisky</a>
+            
+            {# Část s pozvánkou do Síly ne #}
+            <div class="post__cta">
+                <p>
+                    Perma ráj je pro mě živá laboratoř. Pokud vás tyto řádky inspirují, ale v procesu hledání klidu potřebujete 
+                    profesionální doprovod, najdete mě v mém koučovacím projektu 
+                    <a href="https://silane.cz" class="post__cta-link">Síla ne</a>.
+                </p>
+            </div>
+
+            {# Čára a odkaz zpět #}
+            <div class="post__back-wrapper">
+                <a href="/zapisky/" class="post__back-link">← Zpět na všechny zápisky</a>
+            </div>
+
         </div>
     </footer>
 </article>

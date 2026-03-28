@@ -40,4 +40,28 @@ h1, h2, h3 {
         letter-spacing: 0.05em;
         opacity: 0.8;
     }
+
+    .blog-intro-bio {
+        max-width: 650px;       // Klíčové pro čitelnost na PC
+        margin: 2rem auto 0;    // Vycentrování a odstup od titulku
+        font-family: $font-secondary;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: $color-perma-moss;
+        font-style: italic;
+        opacity: 0.85;          // Jemnější vizuální vjem
+        position: relative;
+        padding: 0 1rem;
+
+        // Volitelné: jemná linka nad textem pro oddělení od "Hero" části
+        &::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: $color-perma-clay;
+            margin: 0 auto 1.5rem;
+            opacity: 0.5;
+        }
+    }
 }

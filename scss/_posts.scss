@@ -48,6 +48,9 @@
 
     &__main-img {
         width: 100%;
+        max-width: 700px; // Tohle je ta klíčová změna pro PC
+        margin: 0 auto;   // Vycentruje obrázek, pokud je užší než kontejner
+        display: block;   // Aby fungovalo centrování přes margin auto
         max-height: 70vh;
         object-fit: cover;
         border-radius: $radius-md;
@@ -104,6 +107,36 @@
             opacity: 0.8; // Trochu zprůhledníme
         }
 
+        // --- MŘÍŽKA PRO PANÁČKY (VÝVOJ LOGA) ---
+        .article-image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+
+            .article-image {
+                flex: 1;
+                min-width: 150px;
+                margin: 0; 
+                text-align: center;
+
+                img {
+                    width: auto;
+                    max-height: 180px;
+                    border-radius: 0; 
+                    box-shadow: none;
+                    margin-bottom: 1rem;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                    line-height: 1.4;
+                    margin-top: 0;
+                }
+            }
+        }
+
         // --- ZBYTEK STYLŮ (NADPISY ATD.) ---
         
         h3 {
@@ -118,16 +151,53 @@
         }
     }
     
+    .post {
+    // ... tvoje stávající styly ...
+
     &__footer {
-        padding: 4rem 0;
+        @include section-spacing;
         border-top: 1px solid $color-border-soft;
+        margin-top: 4rem;
+    }
+
+    &__footer-container {
+        @include container-limit;
+        max-width: 750px; // Stejná šířka jako text článku
         text-align: center;
     }
 
-    &__back-link {
-        color: $color-perma-clay;
-        text-decoration: none;
-        font-weight: 700;
-        &:hover { text-decoration: underline; }
+    &__cta {
+        font-family: $font-secondary;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: $color-perma-moss;
+        font-style: italic;
+        margin-bottom: 3rem;
+
+        &-link {
+            color: $color-perma-clay;
+            font-weight: 700;
+            text-decoration: underline;
+            &:hover { color: $color-perma-green; }
+        }
     }
+
+    &__back-wrapper {
+        padding-top: 2rem;
+        // Můžeš zde nechat tu jemnou čáru, pokud chceš odkaz zpět víc oddělit
+    }
+
+    &__back-link {
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        color: $color-perma-earth;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+
+        &:hover { opacity: 1; }
+    }
+}
 }

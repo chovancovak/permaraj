@@ -163,6 +163,8 @@
             &:hover { text-decoration: underline; }
         }
     }
+
+    
 }
 
 .manifest {
@@ -201,7 +203,75 @@
     }
 }
 
+.pathways {
+    @include section-spacing;
+    
+    
+    &__container {
+        @include container-limit;
 
+        margin-bottom: 5rem;    // Dodá 5rem (cca 80px) vzduchu POD rozcestník na PC
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+
+        @media (max-width: $tablet) {
+        margin-bottom: 3rem; // Na mobilu stačí vzduchu trochu méně
+    }
+    }
+}
+
+.pathway-card {
+    padding: 2.5rem;
+    border: 1px solid $color-border-soft;
+    border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--highlight {
+        background-color: rgba($color-perma-clay, 0.03); // Velmi jemný akcent
+        border-color: rgba($color-perma-clay, 0.2);
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: 1.8rem;
+        color: $color-perma-earth;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: $color-perma-earth;
+        
+        strong { color: $color-perma-clay; }
+    }
+
+    &__link {
+        font-weight: 700;
+        text-decoration: none;
+        color: $color-perma-clay;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+
+        &:hover { text-decoration: underline; }
+    }
+
+    &__inline-link {
+        color: inherit;            // Převezme barvu od okolního textu (strong/p)
+        text-decoration: underline; // Necháme podtržení, aby bylo poznat, že je to odkaz
+        text-underline-offset: 3px; // Trochu vzduchu pod linkou (vypadá to elegantněji)
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-perma-clay; // Při najetí jemně zcihlovatí
+        }
+    }
+}
 
 
 
